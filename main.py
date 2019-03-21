@@ -17,12 +17,12 @@ std = [0.229, 0.224, 0.225]
 
 class Config(object):
     image_size = 256  # 图片大小
-    batch_size = 8
-    data_root = 'data/'  # 数据集存放路径：data/coco/a.jpg
+    batch_size = 32
+    data_root = './data/'  # 数据集存放路径：data/coco/a.jpg
     num_workers = 4  # 多线程加载数据
     use_gpu = True  # 使用GPU
 
-    style_path = 'style.jpg'  # 风格图片存放路径
+    style_path = './style.jpg'  # 风格图片存放路径
     lr = 1e-3  # 学习率
 
     env = 'neural-style'  # visdom env
@@ -48,21 +48,20 @@ def train(**kwargs):
     device = t.device('cuda') if opt.use_gpu else t.device("cpu")
     vis = util.Visualizer(opt.env)
 
-    transforms = tv.transforms.Compose({
+    transfroms = tv.transforms.Compose([
         tv.transforms.Resize(opt.image_size),
         tv.transforms.CenterCrop(opt.image_size),
         tv.transforms.ToTensor(),
         tv.transforms.Lambda(lambda x: x * 255)
-    })
-
-    dataset = tv.datasets.ImageFolder(opt.data_root, transforms)
-    dataLoader = data.DataLoader(dataset, opt.batch_size)
+    ])
+    dataset = tv.datasets.ImageFolder(opt.data_root, transfroms)
+    dataloader = data.DataLoader(dataset, opt.batch_size)
 
     transform = TransformerNet()
 
     if opt.model_path:
         transform.load_state_dict(t.load(opt.model_path, map_location=lambda _s, _: _s))
-    transform.to(device)
+    transform = transform.to(device)
 
     vgg = Vgg16().eval()
     vgg.to(device)
@@ -86,18 +85,18 @@ def train(**kwargs):
         content_meter.reset()
         style_meter.reset()
 
-        for ii, (x, _) in tqdm.tqdm(enumerate(dataLoader)):
+        for ii, (x, _) in tqdm.tqdm(enumerate(dataloader)):
 
             # 训练
             optimizer.zero_grad()
             x = x.to(device)
-            y = transform(x)
+            y = t.nn.parallel.data_parallel(transform,x,[0,1])
             y = util.normalize_batch(y)
             x = util.normalize_batch(x)
             features_y = vgg(y)
             features_x = vgg(x)
 
-            content_loss = opt.content_weight * F.mse_loss(features_y.relu_2, features_x.relu2_2)
+            content_loss = opt.content_weight * F.mse_loss(features_y.relu2_2, features_x.relu2_2)
 
             style_loss = 0.
             for ft_y, gm_s in zip(features_y, gram_style):
@@ -122,7 +121,7 @@ def train(**kwargs):
                 vis.img("input", (x.data.cpu()[0] * 0.255 + 0.45).clamp(min=0, max=1))
 
         vis.save([opt.env])
-        t.save(transformer.state_dict(), 'checkpoints/%s_style.pth' % epoch)
+        t.save(transform.state_dict(), 'checkpoints/%s_style.pth' % epoch)
 
 
 @t.no_grad()

@@ -31,7 +31,7 @@ def get_style_data(path):
     style_transform = tv.transforms.Compose(
         {
             tv.transforms.ToTensor(),
-            tv.transforms.Normalize(mean=IMAGENET_MEAN, std=IMAGENET_STD)
+            tv.transforms.Normalize(mean=IMAGENET_MEAN, std=IMAGENET_STD),
         }
     )
     style_image = tv.datasets.folder.default_loader(path)
