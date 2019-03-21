@@ -42,8 +42,8 @@ class Config(object):
 
 def train(**kwargs):
     opt = Config()
-    for k_,v_ in kwargs.items():
-        setattr(opt,k_,v_)
+    for k_, v_ in kwargs.items():
+        setattr(opt, k_, v_)
 
     device = t.device('cuda') if opt.use_gpu else t.device("cpu")
     vis = util.Visualizer(opt.env)
@@ -52,16 +52,16 @@ def train(**kwargs):
         tv.transforms.Resize(opt.image_size),
         tv.transforms.CenterCrop(opt.image_size),
         tv.transforms.ToTensor(),
-        tv.transforms.Lambda(lambda x:x*255)
+        tv.transforms.Lambda(lambda x: x * 255)
     })
 
-    dataset = tv.datasets.ImageFolder(opt.data_root,transforms)
-    dataLoader = data.DataLoader(dataset,opt.batch_size)
+    dataset = tv.datasets.ImageFolder(opt.data_root, transforms)
+    dataLoader = data.DataLoader(dataset, opt.batch_size)
 
     transform = TransformerNet()
 
     if opt.model_path:
-        transform.load_state_dict(t.load(opt.model_path,map_location=lambda _s,_:_s))
+        transform.load_state_dict(t.load(opt.model_path, map_location=lambda _s, _: _s))
     transform.to(device)
 
     vgg = Vgg16().eval()
@@ -69,5 +69,91 @@ def train(**kwargs):
     for param in vgg.parameters():
         param.requires_grad = False
 
-    optimizer = t.optim.Adam(transform.parameters(),opt.lr)
+    optimizer = t.optim.Adam(transform.parameters(), opt.lr)
 
+    style = util.get_style_data(opt.style_path)
+    vis.img("style", (style.data[0] * 0.225 + 0.45).clamp(min=0, max=1))
+    style = style.to(device)
+
+    with t.no_grad():
+        features_style = vgg(style)
+        gram_style = [util.gram_matrix(y) for y in features_style]
+
+    style_meter = tnt.meter.AverageValueMeter()
+    content_meter = tnt.meter.AverageValueMeter()
+
+    for epoch in range(opt.epoches):
+        content_meter.reset()
+        style_meter.reset()
+
+        for ii, (x, _) in tqdm.tqdm(enumerate(dataLoader)):
+
+            # 训练
+            optimizer.zero_grad()
+            x = x.to(device)
+            y = transform(x)
+            y = util.normalize_batch(y)
+            x = util.normalize_batch(x)
+            features_y = vgg(y)
+            features_x = vgg(x)
+
+            content_loss = opt.content_weight * F.mse_loss(features_y.relu_2, features_x.relu2_2)
+
+            style_loss = 0.
+            for ft_y, gm_s in zip(features_y, gram_style):
+                gram_y = util.gram_matrix(ft_y)
+                style_loss += F.mse_loss(gram_y, gm_s.expand_as(gram_y))
+            style_loss *= opt.style_weight
+
+            total_loss = content_loss + style_loss
+            total_loss.backward()
+            optimizer.step()
+
+            content_meter.add(content_loss.item())
+            style_meter.add(style_loss.item())
+
+            if (ii + 1) % opt.plot_every == 0:
+                if os.path.exists(opt.debug_file):
+                    ipdb.set_trace()
+
+                vis.plot("content_loss", content_meter.value()[0])
+                vis.plot("style_loss", style_meter.value()[0])
+                vis.img("output", (y.data.cpu()[0] * 0.255 + 0.45).clamp(min=0, max=1))
+                vis.img("input", (x.data.cpu()[0] * 0.255 + 0.45).clamp(min=0, max=1))
+
+        vis.save([opt.env])
+        t.save(transformer.state_dict(), 'checkpoints/%s_style.pth' % epoch)
+
+
+@t.no_grad()
+def stylize(**kwargs):
+    opt = Config()
+
+    for k_, v_ in kwargs.items():
+        setattr(opt, k_, v_)
+    device = t.device('cuda') if opt.use_gpu else t.device('cpu')
+
+    # 图片处理
+    content_image = tv.datasets.folder.default_loader(opt.content_path)
+    content_transform = tv.transforms.Compose([
+        tv.transforms.ToTensor(),
+        tv.transforms.Lambda(lambda x: x.mul(255))
+    ])
+    content_image = content_transform(content_image)
+    content_image = content_image.unsqueeze(0).to(device).detach()
+
+    # 模型
+    style_model = TransformerNet().eval()
+    style_model.load_state_dict(t.load(opt.model_path, map_location=lambda _s, _: _s))
+    style_model.to(device)
+
+    # 风格迁移与保存
+    output = style_model(content_image)
+    output_data = output.cpu().data[0]
+    tv.utils.save_image(((output_data / 255)).clamp(min=0, max=1), opt.result_path)
+
+
+if __name__ == '__main__':
+    import fire
+
+    fire.Fire()
