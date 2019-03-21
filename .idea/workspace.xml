@@ -4,6 +4,11 @@
     <list default="true" id="94e22afe-c269-4cf1-8051-fcd9ad51f750" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,12 +16,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/transformStyleUsePytorch$main.coverage" NAME="main Coverage Results" MODIFIED="1553146927228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PackedVGG.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="330">
+=======
+            <state relative-caret-position="315">
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
               <caret line="18" column="92" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="92" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
@@ -28,8 +40,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transformer_net.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="1716">
               <caret line="81" column="45" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="45" />
+=======
+            <state relative-caret-position="147">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -40,8 +57,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="374">
               <caret line="22" selection-start-line="22" selection-end-line="22" />
+=======
+            <state relative-caret-position="236">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -49,11 +71,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="1254">
               <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+=======
+            <state relative-caret-position="-231">
+              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -61,6 +88,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
@@ -79,6 +107,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -97,9 +127,9 @@
         <option value="$PROJECT_DIR$/PackedVGG.py" />
         <option value="$PROJECT_DIR$/transformer_net.py" />
         <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/util.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -120,8 +150,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="StyleTransfer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StyleTransfer" type="462c0819:PsiDirectoryNode" />
+              <item name="transformStyleUsePytorch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="transformStyleUsePytorch" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -134,7 +164,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\transformStyleUsePytorch" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -148,6 +183,35 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="StyleTransfer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="train" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -159,11 +223,16 @@
       <option name="presentableId" value="Default" />
       <updated>1553133660923</updated>
       <workItem from="1553133662335" duration="7032000" />
+<<<<<<< HEAD
       <workItem from="1553142969316" duration="859000" />
+=======
+      <workItem from="1553143412459" duration="5940000" />
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="7891000" />
   </component>
   <component name="ToolWindowManager">
@@ -173,10 +242,22 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16204691" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+=======
+    <option name="totallyTimeSpent" value="12972000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15670103" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="File Transfer" weight="0.32897863" />
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32897863" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6935867" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39904988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -184,8 +265,13 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.329718" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32897863" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32897863" />
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -197,7 +283,53 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/util.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>tv.transforms.ToTensor()(style_image)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>tv.transforms.ToTensor(style_image)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>type(style_image)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>style_image</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>style_image._size</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/1190777208/numpy/core/umath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-375">
@@ -209,6 +341,14 @@
     <entry file="file://$PROJECT_DIR$/PackedVGG.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
+=======
+    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/1190777208/numpy/core/umath.py" />
+    <entry file="file://$PROJECT_DIR$/config.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/torch/nn/modules/module.py" />
+    <entry file="file://$PROJECT_DIR$/PackedVGG.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
           <caret line="18" column="92" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="92" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
@@ -216,36 +356,82 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/transformer_net.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1716">
           <caret line="81" column="45" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="45" />
+=======
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transformer_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
+=======
+    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/remote_sources/385237352/-162348962/torchvision/transforms/transforms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/remote_sources/385237352/-162348962/fire/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="541" selection-start-line="541" selection-end-line="541" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1254">
           <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+=======
+    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/remote_sources/385237352/-162348962/torch/utils/data/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-231">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/torch/nn/modules/module.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21648">
@@ -260,5 +446,7 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 11733a566b25eec27dc5491c15c4403254be8216
   </component>
 </project>
