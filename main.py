@@ -10,6 +10,7 @@ from torch.nn import functional as F
 import tqdm
 import os
 import ipdb
+import time
 
 mean = [0.485, 0.456, 0.406]
 std = [0.229, 0.224, 0.225]
@@ -30,14 +31,14 @@ class Config(object):
 
     epoches = 2  # 训练epoch
 
-    content_weight = 1e5  # content_loss 的权重
+    content_weight = 2e5  # content_loss 的权重
     style_weight = 1e10  # style_loss的权重
 
     model_path = None  # 预训练模型的路径
     debug_file = '/tmp/debugnn'  # touch $debug_fie 进入调试模式
 
-    content_path = 'input.png'  # 需要进行分割迁移的图片
-    result_path = 'output.png'  # 风格迁移结果的保存路径
+    content_path = './input.jpg'  # 需要进行分割迁移的图片
+    result_path = './output.png'  # 风格迁移结果的保存路径
 
 
 def train(**kwargs):
@@ -121,7 +122,7 @@ def train(**kwargs):
                 vis.img("input", (x.data.cpu()[0] * 0.255 + 0.45).clamp(min=0, max=1))
 
         vis.save([opt.env])
-        t.save(transform.state_dict(), 'checkpoints/%s_style.pth' % epoch)
+        t.save(transform.state_dict(), 'checkpoints/'+time.ctime()+'%s_style.pth' % epoch)
 
 
 @t.no_grad()
